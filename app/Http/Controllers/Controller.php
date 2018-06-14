@@ -22,4 +22,17 @@ class Controller extends BaseController
             'count_followers' => $count_followers,
         ];
     }
+    
+    public function counts($user) {
+        $count_microposts = $user->microposts()->count();
+        $count_favorites = $user->favorites()->count();
+
+        return [
+            'count_microposts' => $count_microposts,
+            'count_favorites' => $count_favorites,
+        ];
+    }
 }
+
+
+
